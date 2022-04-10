@@ -10,7 +10,7 @@ public class helloController {
 	@RequestMapping("/")
 	@ResponseBody
 	public String hello() {
-		return "teste de inicializacao";
+		return "teste de inicializacaoo";
 	}
 	
 }
