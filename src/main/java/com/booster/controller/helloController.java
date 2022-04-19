@@ -1,16 +1,26 @@
 package com.booster.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.booster.model.Account;
+import com.booster.repository.AccountRepository;
+
+@RestController
 @Controller
-public class helloController {
+public class HelloController {
+	
+	@Autowired
+	private AccountRepository accountRepository;
 	
 	@RequestMapping("/")
-	@ResponseBody
-	public String hello() {
-		return "teste de inicializacaoo";
+	public List<Account> lista() {
+		List<Account> conta = accountRepository.findAll();
+		return conta;
 	}
 	
 }
